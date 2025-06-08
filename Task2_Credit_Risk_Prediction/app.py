@@ -1,3 +1,8 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
+MODEL_PATH = BASE_DIR / "Task2_xgb_credit_risk_prediction.pkl"
 import streamlit as st
 import pandas as pd
 import numpy as np
