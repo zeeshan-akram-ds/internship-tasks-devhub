@@ -10,7 +10,7 @@ import joblib
 from PIL import Image
 
 # Load the trained pipeline
-pipeline = joblib.load('Task2_xgb_credit_risk_prediction.pkl')
+pipeline = joblib.load(MODEL_PATH)
 
 # Set page configuration
 st.set_page_config(page_title="Loan Risk Prediction", layout="wide")
