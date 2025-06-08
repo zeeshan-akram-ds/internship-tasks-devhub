@@ -1,10 +1,19 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
+MODEL_PATH = BASE_DIR / "task5_loan_acceptance_pred.pkl"
+roc_path = BASE_DIR / "roc_curve_task5.png"
+cm_path = BASE_DIR / "cm_task5.png"
+fi_path = BASE_DIR / "feature_importance_task5.png"
+pr_path = BASE_DIR / "pr_curve_task5.png"
 import streamlit as st
 import pandas as pd
 import joblib
 from PIL import Image
 
 # Load the trained pipeline
-model_pipeline = joblib.load('task5_loan_acceptance_pred.pkl')
+model_pipeline = joblib.load(MODEL_PATH)
 
 # Sidebar About section (Always visible)
 with st.sidebar:
@@ -135,28 +144,28 @@ with tab2:
 
     if viz_option == "Feature Importance":
         try:
-            img = Image.open("feature_importance_task5.png")
+            img = Image.open(fi_path)
             st.image(img, use_container_width=True)
         except FileNotFoundError:
             st.warning("Feature Importance image not found. Please add 'feature_importance_task5.png' to the directory.")
 
     elif viz_option == "Confusion Matrix":
         try:
-            img = Image.open("cm_task5.png")
+            img = Image.open(cm_path)
             st.image(img, use_container_width=True)
         except FileNotFoundError:
             st.warning("Confusion Matrix image not found. Please add 'cm_task5.png' to the directory.")
 
     elif viz_option == "ROC Curve":
         try:
-            img = Image.open("roc_curve_task5.png")
+            img = Image.open(roc_path)
             st.image(img, use_container_width=True)
         except FileNotFoundError:
             st.warning("ROC Curve image not found. Please add 'roc_curve_task5.png' to the directory.")
 
     elif viz_option == "Precision-Recall Curve":
         try:
-            img = Image.open("pr_curve_task5.png")
+            img = Image.open(pr_path)
             st.image(img, use_container_width=True)
         except FileNotFoundError:
             st.warning("Precision-Recall Curve image not found. Please add 'pr_curve_task5.png' to the directory.")
