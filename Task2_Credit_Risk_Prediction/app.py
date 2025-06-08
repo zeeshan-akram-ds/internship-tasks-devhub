@@ -3,6 +3,8 @@ from pathlib import Path
 BASE_DIR = Path(__file__).parent
 
 MODEL_PATH = BASE_DIR / "Task2_xgb_credit_risk_prediction.pkl"
+roc_path = BASE_DIR / "roc_curve_task2.png"
+cm_path = BASE_DIR / "confusion_matrix_task2.png"
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -27,14 +29,14 @@ if show_viz:
 
     if viz_option == "ROC Curve":
         try:
-            roc_image = Image.open("roc_curve_task2.png")
+            roc_image = Image.open(roc_path)
             st.image(roc_image, use_container_width=True, caption="ROC Curve - Tuned XGBoost")
         except FileNotFoundError:
             st.warning("ROC Curve image not found. Please add 'roc_curve.png' to the directory.")
 
     elif viz_option == "Confusion Matrix":
         try:
-            cm_image = Image.open("confusion_matrix_task2.png")
+            cm_image = Image.open(cm_path)
             st.image(cm_image, use_container_width=True, caption="Confusion Matrix - Tuned XGBoost")
         except FileNotFoundError:
             st.warning("Confusion Matrix image not found. Please add 'confusion_matrix.png' to the directory.")
