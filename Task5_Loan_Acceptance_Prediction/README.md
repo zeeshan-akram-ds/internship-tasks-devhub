@@ -45,21 +45,22 @@ I used the **Medical Cost Personal Dataset** which is a widely used dataset in t
   - Multiple parameters tuned including learning rate, max_depth, n_estimators, etc.
   - Plotted tuning history and results for interpretability.
 
-## Evaluation
-### Final Tuned Model - Classification Report:
-          precision    recall  f1-score   support
+## Model Evaluation
 
-       0       0.96      0.89      0.93       801
-       1       0.47      0.75      0.58       104
+### Classification Report
+| Class | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| 0     | 0.96      | 0.89   | 0.93     | 801     |
+| 1     | 0.47      | 0.75   | 0.58     | 104     |
+| **Accuracy** |       |        | **0.88** | **905** |
+| **Macro Avg** | 0.72  | 0.82   | 0.75     | 905     |
+| **Weighted Avg** | 0.91 | 0.88 | 0.89   | 905     |
 
-accuracy                           0.88       905
-macro avg       0.72      0.82      0.75       905
-weighted avg    0.91      0.88      0.89       905
-
-### Confusion Matrix:
-
-[[714  87]
- [ 26  78]]
+### Confusion Matrix
+|       | Predicted 0 | Predicted 1 |
+|-------|-------------|-------------|
+| **Actual 0** | 714         | 87          |
+| **Actual 1** | 26          | 78          |
 
 ### Other Visualizations:
 - **Feature Importance Plot**
