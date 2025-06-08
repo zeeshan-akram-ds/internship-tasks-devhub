@@ -1,3 +1,12 @@
+from pathlib import Path
+
+BASE_DIR = Path(__file__).parent
+
+MODEL_PATH = BASE_DIR / "task3_churn_modeling.pkl"
+roc_path = BASE_DIR / "roc_curve_task3.png"
+cm_path = BASE_DIR / "cm_task3.png"
+fi_path = BASE_DIR / "feature_imp_task3.png"
+shap_path = BASE_DIR / "shap_summary_plot_task3.png"
 import streamlit as st
 import joblib
 import pandas as pd
@@ -5,7 +14,7 @@ import numpy as np
 from PIL import Image
 
 # Load the trained model
-model_pipeline = joblib.load('task3_churn_modeling.pkl')
+model_pipeline = joblib.load(MODEL_PATH)
 
 # Streamlit App
 st.set_page_config(page_title="Bank Customer Churn Prediction", layout="wide")
@@ -79,10 +88,10 @@ if viz_choice != "None":
     st.sidebar.info(f"Displaying: {viz_choice}")
 
     image_map = {
-        "SHAP Summary Plot": "shap_summary_plot_task3.png",
-        "Feature Importance": "feature_imp_task3.png",
-        "Confusion Matrix": "cm_task3.png",
-        "ROC Curve": "roc_curve_task3.png"
+        "SHAP Summary Plot": shap_path,
+        "Feature Importance": fi_path,
+        "Confusion Matrix": cm_path,
+        "ROC Curve": roc_path
     }
 
     try:
