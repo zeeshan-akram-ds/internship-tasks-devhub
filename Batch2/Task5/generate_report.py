@@ -65,7 +65,7 @@ class PDFReport(FPDF):
 # Main Function to Generate PDF Report
 # ----------------------------------------------
 
-def generate_pdf_report(df, kpis: dict, insights: list, chart_paths: list, output_path="superstore_report.pdf", alerts: list = None):
+def generate_pdf_report(df, kpis: dict, insights: list, output_path="superstore_report.pdf", alerts: list = None):
     """
     Generates a clean, fast business PDF report without heavy charts.
     
@@ -95,7 +95,7 @@ def generate_pdf_report(df, kpis: dict, insights: list, chart_paths: list, outpu
         pdf.add_title("Business Alerts")
         pdf.add_insight_list(alerts)
 
-    # Optional: remove charts to improve speed/performance
+    # remove charts to improve speed/performance
     # Previously used chart_paths, now excluded for performance
     # pdf.add_title("Visual Charts")
     # for chart in chart_paths:
