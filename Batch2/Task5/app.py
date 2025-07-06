@@ -632,8 +632,7 @@ def convert_df_to_csv(df):
 # ------------------------------------------
 # Generate and Return PDF Report to App
 # ------------------------------------------
-@st.cache_data
-def generate_and_return_pdf(_ts=None):
+def generate_and_return_pdf():
     # Prepare KPI dictionary
     kpis = {
         "Total Sales": f"${total_sales:,.0f}",
@@ -680,7 +679,7 @@ st.sidebar.download_button(
 # PDF Report Button
 if st.sidebar.button("Generate PDF Report"):
     with st.spinner("Generating report..."):
-        pdf_data = generate_and_return_pdf(_ts=time.time())
+        pdf_data = generate_and_return_pdf()
 
     st.sidebar.download_button(
         label="📥 Download PDF",
