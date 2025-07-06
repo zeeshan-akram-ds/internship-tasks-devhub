@@ -153,6 +153,35 @@ This step ensures the dataset is optimized and ready for interactive BI dashboar
 
 ---
 
+### Sample Dashboard View
+
+![Main Dashboard](images/Dashboard_image.png)
+
+### Filters Panel
+
+![Filters](images/Filters.png)
+
+### Pie Chart Example
+
+![Pie Chart](images/Pie_chart.png)
+
+### PDF report sample image
+
+![PDF Report Sample](images/Pdf_report_sample.png)
+
+---
+### Auto-Generated PDF Report (Sample)
+
+This dashboard can generate a clean, stakeholder-ready PDF report on click or even email it!
+
+![PDF Preview](images/superstore_report.pdf)
+
+---
+### Quick Demo (60s)
+
+[![Watch Video](https://img.youtube.com/vi/YOUTUBE_ID/0.jpg)](https://www.youtube.com/watch?v=vv4wd2z3mxg)
+
+---
 # Technical Stack
 
 * **Frontend/UI**: Streamlit
