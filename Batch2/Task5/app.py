@@ -34,7 +34,7 @@ st.markdown("<h1 style='text-align: center; color: #2c3e50;'>Superstore Sales Da
 st.markdown("<p style='text-align: center; color: #7f8c8d;'>Interactive Business Intelligence Dashboard built with Streamlit</p>", unsafe_allow_html=True)
 st.markdown("---")
 
-st.caption("Last updated: July 5, 2025")
+st.caption("Last updated: July 6, 2025")
 @st.cache_data
 def load_data():
     df = pd.read_csv("Batch2/Task5/cleaned_global_superstore.csv", sep=",")
