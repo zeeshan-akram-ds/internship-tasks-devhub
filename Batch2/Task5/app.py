@@ -657,7 +657,7 @@ def generate_and_return_pdf():
     output_file = f"superstore_report_{timestamp}.pdf"
 
     # Generate PDF
-    generate_pdf_report(filtered_df, kpis, insights, output_file=output_file, alerts=alerts)
+    generate_pdf_report(filtered_df, kpis, insights, output_path=output_file, alerts=alerts)
 
     # Read PDF as bytes for download
     with open(output_file, "rb") as f:
