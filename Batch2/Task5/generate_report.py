@@ -76,6 +76,7 @@ def generate_pdf_report(df, kpis: dict, insights: list, chart_paths: list, outpu
     - alerts: List of business alert strings (losses, drops, etc.)
     """
     pdf = PDFReport()
+    pdf.set_auto_page_break(auto=True, margin=20)
     pdf.add_page()
 
     # Section: KPIs
