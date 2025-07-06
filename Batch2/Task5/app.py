@@ -723,13 +723,31 @@ if st.sidebar.button("📤 Send PDF to Email"):
         except Exception as e:
             st.sidebar.error(f"Failed to send email: {e}")
 
-st.markdown("---", unsafe_allow_html=True)
-
 st.markdown("""
-<div style='text-align: center; padding-top: 10px; font-size: 15px;'>
-    Built with ❤️ by <b>Zeeshan Akram</b>  
-    <br>
-    🔗 <a href='https://github.com/zeeshan-akram-ds' target='_blank'>GitHub</a> | 
-    <a href='https://linkedin.com/in/zeeshan-akram-ds' target='_blank'>LinkedIn</a>
+<style>
+.footer-box {
+    background-color: #f0f2f6;
+    border-top: 1px solid #d3d3d3;
+    padding: 15px 0 10px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 14px;
+    color: #333333;
+}
+.footer-box a {
+    color: #1a73e8;
+    text-decoration: none;
+    margin: 0 8px;
+    font-weight: 500;
+}
+.footer-box a:hover {
+    text-decoration: underline;
+}
+</style>
+
+<div class='footer-box'>
+    Developed & maintained by <strong>Zeeshan Akram</strong> —
+    <a href='https://github.com/zeeshan-akram-ds' target='_blank'>GitHub</a> |
+    <a href='https://www.linkedin.com/in/zeeshan-akram-572bbb34a/' target='_blank'>LinkedIn</a>
 </div>
 """, unsafe_allow_html=True)
