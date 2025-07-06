@@ -22,7 +22,13 @@ class PDFReport(FPDF):
         self.set_y(-15)
         self.set_font("Helvetica", "I", 8)
         self.set_text_color(100)
-        self.cell(0, 10, f"Page {self.page_no()}", align="C")
+    
+        # Page number
+        self.cell(0, 5, f"Page {self.page_no()}", ln=True, align="C")
+    
+        # Credit footer 
+        self.set_y(-10)
+        self.cell(0, 5, "Developed by Zeeshan Akram | GitHub: zeeshan-akram-ds | LinkedIn: zeeshan-akram-ds", align="C")
 
     def add_title(self, title):
         self.set_font("Helvetica", "B", 12)
