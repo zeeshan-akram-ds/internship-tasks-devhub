@@ -25,13 +25,16 @@ import os
 import smtplib
 from email.message import EmailMessage
 import re
-st.write("📁 Current Working Directory:", os.getcwd())
-st.write("📄 Files in Directory:", os.listdir())
-
 ## Lets Set Page Layout + Load Data
 # Setting wide layout for dashboard
 st.set_page_config(page_title="Superstore BI Dashboard", layout="wide")
 
+# App Title & Subtitle
+st.markdown("<h1 style='text-align: center; color: #2c3e50;'>Superstore Sales Dashboard</h1>", unsafe_allow_html=True)
+st.markdown("<p style='text-align: center; color: #7f8c8d;'>Interactive Business Intelligence Dashboard built with Streamlit</p>", unsafe_allow_html=True)
+st.markdown("---")
+
+st.caption("Last updated: July 5, 2025")
 @st.cache_data
 def load_data():
     df = pd.read_csv("Batch2/Task5/cleaned_global_superstore.csv", sep=",")
@@ -123,6 +126,8 @@ st.markdown("""
 }
 </style>
 """, unsafe_allow_html=True)
+
+st.markdown("### Key Performance Indicators")
 
 # Show KPIs in 4 columns
 col1, col2, col3, col4 = st.columns(4)
