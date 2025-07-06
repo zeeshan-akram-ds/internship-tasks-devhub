@@ -183,7 +183,8 @@ This dashboard includes a powerful feature to generate **clean, professional PDF
 
 Watch a live walkthrough of the dashboard in action — including real-time filtering, KPI updates, dynamic visualizations, and automated reporting features.
 
-[![Watch Demo Video](https://img.youtube.com/vi/vv4wd2z3mxg/0.jpg)](https://www.youtube.com/watch?v=vv4wd2z3mxg)
+[![Watch Demo Video](https://img.youtube.com/vi/vv4wd2z3mxg/0.jpg)](https://www.youtube.com/watch?v=vv4wd2z3mxg) 
+
 
 > ** Key Highlights Covered in the Demo:**  
 > - Dashboard layout & navigation  
