@@ -3,6 +3,7 @@ import plotly.io as pio
 import os
 import pandas as pd
 from datetime import datetime
+import pytz
 
 # ----------------------------------------------
 # PDF Report Generator for Superstore Dashboard
@@ -10,26 +11,33 @@ from datetime import datetime
 
 class PDFReport(FPDF):
     def header(self):
-        self.set_font("Helvetica", "B", 14)
-        self.set_text_color(40, 40, 40)
-        self.cell(0, 10, "Global Superstore - Sales Summary Report", ln=True, align="C")
+        self.set_font("Arial", "B", 16)
+        self.set_text_color(30, 30, 30)
+        self.cell(0, 10, "Superstore Sales Dashboard", ln=True, align="C")
+        self.ln(4)
+        self.set_font("Arial", "", 12)
+        self.set_text_color(90, 90, 90)
+        self.cell(0, 10, "Comprehensive BI Report", ln=True, align="C")
         self.ln(5)
-        self.set_font("Helvetica", "", 10)
-        self.cell(0, 10, f"Generated on: {datetime.today().strftime('%Y-%m-%d %H:%M:%S')}", ln=True, align="C")
-        self.ln(10)
 
+        # Pakistan timestamp
+        pakistan_time = datetime.now(pytz.timezone('Asia/Karachi')).strftime("%B %d, %Y %I:%M %p")
+        self.set_font("Arial", "I", 10)
+        self.set_text_color(110, 110, 110)
+        self.cell(0, 8, f"Generated on: {pakistan_time}", ln=True, align="C")
+
+        self.line(10, self.get_y(), 200, self.get_y())
+        self.ln(8)
+        
     def footer(self):
         self.set_y(-15)
-        self.set_font("Helvetica", "I", 8)
+        self.set_font("Arial", "I", 8)
         self.set_text_color(100)
     
-        # Page number
         self.cell(0, 5, f"Page {self.page_no()}", ln=True, align="C")
-    
-        # Credit footer 
         self.set_y(-10)
         self.cell(0, 5, "Developed by Zeeshan Akram | GitHub: zeeshan-akram-ds | LinkedIn: zeeshan-akram-ds", align="C")
-
+        
     def add_title(self, title):
         self.set_font("Helvetica", "B", 12)
         self.set_text_color(20, 20, 20)
