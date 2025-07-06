@@ -653,7 +653,8 @@ def generate_and_return_pdf(_ts=None):
 
     alerts = generate_alerts(filtered_df)
     # Output path
-    output_file = "superstore_report.pdf"
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M")
+    output_file = f"superstore_report_{timestamp}.pdf"
 
     # Generate PDF
     generate_pdf_report(filtered_df, kpis, insights, output_file, alerts=alerts)
