@@ -34,7 +34,7 @@ st.set_page_config(page_title="Superstore BI Dashboard", layout="wide")
 
 @st.cache_data
 def load_data():
-    df = pd.read_csv("cleaned_global_superstore.csv", sep=",")
+    df = pd.read_csv("Batch2/Task5/cleaned_global_superstore.csv", sep=",")
     df.columns = df.columns.str.strip()
     df["Order Date"] = pd.to_datetime(df["Order Date"], dayfirst=False, errors="coerce")
     return df
