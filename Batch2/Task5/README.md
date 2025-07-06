@@ -172,15 +172,25 @@ This step ensures the dataset is optimized and ready for interactive BI dashboar
 ---
 ### Auto-Generated PDF Report (Sample)
 
-This dashboard can generate a clean, stakeholder-ready PDF report on click or even email it!
+This dashboard includes a powerful feature to generate **clean, professional PDF reports** tailored to selected filters (e.g., region, category, date range). These reports are ideal for stakeholders, team reviews, or record-keeping — and can also be **emailed directly from the app**.
 
-![PDF Preview](images/superstore_report.pdf)
+📥 **[Click here to view the sample PDF report](./images/superstore_report.pdf)**  
+*Includes KPIs, business insights, performance alerts, and custom formatting.*
 
 ---
-### Quick Demo (60s)
 
-[![Watch Video](https://img.youtube.com/vi/YOUTUBE_ID/0.jpg)](https://www.youtube.com/watch?v=vv4wd2z3mxg)
+### Interactive Dashboard Demo (60 seconds)
 
+Watch a live walkthrough of the dashboard in action — including real-time filtering, KPI updates, dynamic visualizations, and automated reporting features.
+
+[![Watch Demo Video](https://img.youtube.com/vi/vv4wd2z3mxg/0.jpg)](https://www.youtube.com/watch?v=vv4wd2z3mxg)
+
+> ** Key Highlights Covered in the Demo:**  
+> - Dashboard layout & navigation  
+> - Filters: Region, Category, Sub-Category, Date Range  
+> - Customer & Product lookup  
+> - PDF & CSV export functionality  
+> - KPI breakdowns & insights panel
 ---
 # Technical Stack
 
