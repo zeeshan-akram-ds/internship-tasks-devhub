@@ -357,7 +357,7 @@ fig_top_customers = px.bar(
     title="Top 5 Customers by Total Sales",
 )
 
-fig_top_customers.update_traces(texttemplate='%{text:.2s}', textposition='outside')
+fig_top_customers.update_traces(texttemplate='%{text:.2s}', textposition='auto')
 fig_top_customers.update_layout(
     xaxis_title="Customer",
     yaxis_title="Total Sales",
