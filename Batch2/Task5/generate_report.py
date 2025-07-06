@@ -35,8 +35,10 @@ class PDFReport(FPDF):
         self.set_text_color(100)
     
         self.cell(0, 5, f"Page {self.page_no()}", ln=True, align="C")
+        
         self.set_y(-10)
-        self.cell(0, 5, "Developed by Zeeshan Akram | GitHub: github.com/zeeshan-akram-ds | LinkedIn: linkedin.com/in/zeeshan-akram-572bbb34a", align="C")
+        self.cell(0, 5, "Developed by Zeeshan Akram", ln=True, align="C")
+        self.cell(0, 5, "GitHub: github.com/zeeshan-akram-ds | LinkedIn: linkedin.com/in/zeeshan-akram-572bbb34a", ln=True, align="C")
         
     def add_title(self, title):
         self.set_font("Helvetica", "B", 12)
