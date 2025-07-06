@@ -722,3 +722,14 @@ if st.sidebar.button("📤 Send PDF to Email"):
 
         except Exception as e:
             st.sidebar.error(f"Failed to send email: {e}")
+
+st.markdown("---", unsafe_allow_html=True)
+
+st.markdown("""
+<div style='text-align: center; padding-top: 10px; font-size: 15px;'>
+    Built with ❤️ by <b>Zeeshan Akram</b>  
+    <br>
+    🔗 <a href='https://github.com/zeeshan-akram-ds' target='_blank'>GitHub</a> | 
+    <a href='https://linkedin.com/in/zeeshan-akram-ds' target='_blank'>LinkedIn</a>
+</div>
+""", unsafe_allow_html=True)
