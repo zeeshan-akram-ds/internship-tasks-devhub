@@ -25,6 +25,9 @@ import os
 import smtplib
 from email.message import EmailMessage
 import re
+st.write("📁 Current Working Directory:", os.getcwd())
+st.write("📄 Files in Directory:", os.listdir())
+
 ## Lets Set Page Layout + Load Data
 # Setting wide layout for dashboard
 st.set_page_config(page_title="Superstore BI Dashboard", layout="wide")
