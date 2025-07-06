@@ -684,7 +684,9 @@ if st.sidebar.button("Generate PDF Report"):
 st.sidebar.markdown("### Email Report")
 
 user_email = st.sidebar.text_input("Recipient Email")
-
+# From st.secrets
+sender_email = st.secrets["email"]["sender"]
+sender_pass = st.secrets["email"]["password"]
 if st.sidebar.button("📤 Send PDF to Email"):
     if not user_email or not re.match(r"[^@]+@[^@]+\.[^@]+", user_email):
         st.sidebar.error("Please enter a valid email address.")
@@ -697,7 +699,7 @@ if st.sidebar.button("📤 Send PDF to Email"):
             # Compose email
             msg = EmailMessage()
             msg['Subject'] = 'Superstore Dashboard Report'
-            msg['From'] = "zeeshanakram1704@gmail.com"
+            msg['From'] = "sender_email"
             msg['To'] = user_email
             msg.set_content("Hello,\n\nPlease find attached the Superstore dashboard report.\n\nBest regards,\nBI Dashboard")
 
@@ -705,7 +707,7 @@ if st.sidebar.button("📤 Send PDF to Email"):
 
             # SMTP send
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login("zeeshanakram.1704@gmail.com", "oknq oayn lllw tixh")
+                smtp.login("sender_email", "sender_pass")
                 smtp.send_message(msg)
 
             st.sidebar.success(f"Report sent to {user_email}")
