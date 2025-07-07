@@ -9,8 +9,8 @@ from pdf_generator import generate_segment_pdf
 st.set_page_config(page_title="Customer Segmentation App", layout="wide")
 
 # Load data
-main_df = pd.read_csv("mall_customers_original_with_segments.csv", sep=',')
-final_df = pd.read_csv("mall_customers_scaled_with_segments.csv", sep=',')
+main_df = pd.read_csv("Batch2/Task2_Customer_Segmentation/mall_customers_original_with_segments.csv", sep=',')
+final_df = pd.read_csv("Batch2/Task2_Customer_Segmentation/mall_customers_scaled_with_segments.csv", sep=',')
 segments = ['All Segments'] + sorted(main_df['Segment'].unique().tolist())
 ## Sidebar
 st.sidebar.title("Customer Segmentation App")
