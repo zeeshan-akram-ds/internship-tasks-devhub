@@ -143,7 +143,7 @@ These segments are not arbitrary — they are carefully named to reflect real-wo
 
 1. Clone the repo:
 ```bash
-git clone https://github.com/your-username/Task2_Customer_Segmentation
+git clone (https://github.com/zeeshan-akram-ds/internship-tasks-devhub/main/Batch2/Task2_Customer_Segmentation)
 cd Task2_Customer_Segmentation
 ```
 
