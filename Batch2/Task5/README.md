@@ -151,6 +151,9 @@ This step ensures the dataset is optimized and ready for interactive BI dashboar
 * User can enter email and instantly receive the PDF report via SMTP
 * **Business Value**: Facilitates automated report distribution across teams
 
+
+**Live App**: [Superstore BI Dashboard](https://internship-tasks-devapp-qbezt4qddwcbj4y5qwewjs.streamlit.app/)
+
 ---
 
 ### Sample Dashboard View
