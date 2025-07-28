@@ -114,6 +114,8 @@ These segments are not arbitrary — they are carefully named to reflect real-wo
 
  Use the app to explore segments, then generate a **sharable report** for management.
 
+**Live App**: [Customer Segmentation Dashboard](https://internship-tasks-devapp-juqrcrzfphz8a3ihfmwwdj.streamlit.app/)
+
 ---
 
 ## Sample Use Case (Business Scenario)
