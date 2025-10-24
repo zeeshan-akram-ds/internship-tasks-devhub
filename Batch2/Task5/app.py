@@ -677,18 +677,23 @@ st.sidebar.download_button(
     mime='text/csv'
 )
 
-# PDF Report Button
+# PDF Report Generation
 if st.sidebar.button("Generate PDF Report"):
     with st.spinner("Generating report..."):
-        pdf_data = generate_and_return_pdf()
+        # Store the generated PDF data in the session state
+        st.session_state['pdf_report_data'] = generate_and_return_pdf()
+        st.sidebar.success("Report is ready for download!")
 
+# PDF Download Button
+# This button will only appear AFTER a report has been generated and stored.
+if 'pdf_report_data' in st.session_state and st.session_state['pdf_report_data'] is not None:
     st.sidebar.download_button(
         label="📥 Download PDF",
-        data=pdf_data,
+        data=st.session_state['pdf_report_data'],
         file_name="superstore_report.pdf",
         mime="application/pdf"
     )
-
+    
 
 st.sidebar.markdown("### Email Report")
 
@@ -696,34 +701,38 @@ user_email = st.sidebar.text_input("Recipient Email")
 # From st.secrets
 sender_email = st.secrets["email"]["sender"]
 sender_pass = st.secrets["email"]["password"]
+
 if st.sidebar.button("📤 Send PDF to Email"):
-    if not user_email or not re.match(r"[^@]+@[^@]+\.[^@]+", user_email):
+    # First, check if a report has been generated and is available
+    if 'pdf_report_data' not in st.session_state or st.session_state['pdf_report_data'] is None:
+        st.sidebar.warning("Please generate the PDF report first.")
+    elif not user_email or not re.match(r"[^@]+@[^@]+\.[^@]+", user_email):
         st.sidebar.error("Please enter a valid email address.")
     else:
         try:
-            # Load PDF
-            with open("superstore_report.pdf", "rb") as f:
-                file_data = f.read()
+            # Use the PDF data directly from the session state
+            file_data = st.session_state['pdf_report_data']
 
             # Compose email
             msg = EmailMessage()
             msg['Subject'] = 'Superstore Dashboard Report'
-            msg['From'] = "sender_email"
+            # FIX: Use the variable, not the string "sender_email"
+            msg['From'] = sender_email
             msg['To'] = user_email
             msg.set_content("Hello,\n\nPlease find attached the Superstore dashboard report.\n\nBest regards,\nBI Dashboard")
 
+            # Attach the in-memory PDF data
             msg.add_attachment(file_data, maintype='application', subtype='pdf', filename="superstore_report.pdf")
 
             # SMTP send
             with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp:
-                smtp.login("sender_email", "sender_pass")
+                smtp.login(sender_email, sender_pass)
                 smtp.send_message(msg)
 
             st.sidebar.success(f"Report sent to {user_email}")
 
         except Exception as e:
             st.sidebar.error(f"Failed to send email: {e}")
-
 st.markdown("""
 <style>
 .footer-box {
@@ -752,3 +761,4 @@ st.markdown("""
     <a href='https://www.linkedin.com/in/zeeshan-akram-572bbb34a/' target='_blank'>LinkedIn</a>
 </div>
 """, unsafe_allow_html=True)
+
