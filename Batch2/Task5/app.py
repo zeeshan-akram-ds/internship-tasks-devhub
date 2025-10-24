@@ -716,7 +716,7 @@ if st.sidebar.button("📤 Send PDF to Email"):
             # Compose email
             msg = EmailMessage()
             msg['Subject'] = 'Superstore Dashboard Report'
-            # FIX: Use the variable, not the string "sender_email"
+            # Use the variable, not the string "sender_email"
             msg['From'] = sender_email
             msg['To'] = user_email
             msg.set_content("Hello,\n\nPlease find attached the Superstore dashboard report.\n\nBest regards,\nBI Dashboard")
@@ -761,4 +761,5 @@ st.markdown("""
     <a href='https://www.linkedin.com/in/zeeshan-akram-572bbb34a/' target='_blank'>LinkedIn</a>
 </div>
 """, unsafe_allow_html=True)
+
 
