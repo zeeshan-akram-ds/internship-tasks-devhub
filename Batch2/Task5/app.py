@@ -158,12 +158,12 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+# --- HEADER ---
+st.subheader("Key Performance Indicators")
 
 # --- DISPLAY KPI CARDS ---
 col1, col2, col3, col4 = st.columns(4)
 
-# --- HEADER ---
-st.subheader("Key Performance Indicators")
 
 # KPI Card 1: Total Sales
 with col1:
@@ -822,6 +822,7 @@ st.markdown("""
     <a href='https://www.linkedin.com/in/zeeshan-akram-572bbb34a/' target='_blank'>LinkedIn</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
