@@ -105,40 +105,98 @@ total_profit = filtered_df["Profit"].sum()
 total_orders = filtered_df.shape[0]
 unique_customers = filtered_df["Customer ID"].nunique()
 
-# Custom CSS (lightweight)
+# --- CSS STYLES ---
 st.markdown("""
 <style>
+/* Import Font Awesome for icons */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
 .kpi-card {
-    padding: 20px;
-    background-color: #F7F7F7;
-    border-radius: 12px;
-    margin-bottom: 10px;
-    box-shadow: 1px 1px 5px rgba(0,0,0,0.05);
+    background-color: #1E1E1E;
+    border-radius: 15px;
+    padding: 25px 15px;
+    margin: 10px 0;
     text-align: center;
+    color: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #2A2A2A;
+    height: 160px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly; 
 }
+
+.kpi-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.4);
+}
+
 .kpi-title {
-    font-size: 16px;
-    color: #666;
+    font-size: 18px;
+    font-weight: 500;
+    color: #B0B0B0; 
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; 
 }
+
 .kpi-value {
-    font-size: 26px;
-    font-weight: bold;
-    color: #2B547E;
+    font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    white-space: nowrap; /* Ensures the number never wraps to a new line */
 }
+
+/* Icon-specific colors for better visual distinction */
+.fa-dollar-sign { color: #28a745; } /* Green */
+.fa-chart-line { color: #007bff; } /* Blue */
+.fa-shopping-cart { color: #ffc107; } /* Yellow */
+.fa-users { color: #dc3545; } /* Red */
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("### Key Performance Indicators")
 
-# Show KPIs in 4 columns
+# --- DISPLAY KPI CARDS ---
 col1, col2, col3, col4 = st.columns(4)
 
-col1.markdown(f"<div class='kpi-card'><div class='kpi-title'>Total Sales</div><div class='kpi-value'>${total_sales:,.0f}</div></div>", unsafe_allow_html=True)
-col2.markdown(f"<div class='kpi-card'><div class='kpi-title'>Total Profit</div><div class='kpi-value'>${total_profit:,.0f}</div></div>", unsafe_allow_html=True)
-col3.markdown(f"<div class='kpi-card'><div class='kpi-title'>Total Orders</div><div class='kpi-value'>{total_orders:,}</div></div>", unsafe_allow_html=True)
-col4.markdown(f"<div class='kpi-card'><div class='kpi-title'>Unique Customers</div><div class='kpi-value'>{unique_customers:,}</div></div>", unsafe_allow_html=True)
+# KPI Card 1: Total Sales
+with col1:
+    st.markdown(f"""
+    <div class='kpi-card'>
+        <div class='kpi-title'><i class="fas fa-dollar-sign"></i>Total Sales</div>
+        <div class='kpi-value'>${total_sales:,.0f}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
+# KPI Card 2: Total Profit
+with col2:
+    st.markdown(f"""
+    <div class='kpi-card'>
+        <div class='kpi-title'><i class="fas fa-chart-line"></i>Total Profit</div>
+        <div class='kpi-value'>${total_profit:,.0f}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
+# KPI Card 3: Total Orders
+with col3:
+    st.markdown(f"""
+    <div class='kpi-card'>
+        <div class='kpi-title'><i class="fas fa-shopping-cart"></i>Total Orders</div>
+        <div class='kpi-value'>{total_orders:,}</div>
+    </div>
+    """, unsafe_allow_html=True)
+
+# KPI Card 4: Unique Customers
+with col4:
+    st.markdown(f"""
+    <div class='kpi-card'>
+        <div class='kpi-title'><i class="fas fa-users"></i>Unique Customers</div>
+        <div class='kpi-value'>{unique_customers:,}</div>
+    </div>
+    """, unsafe_allow_html=True)
 
 ## Lets add Auto-Generated Insights Panel
 # -------------------------------
@@ -761,6 +819,7 @@ st.markdown("""
     <a href='https://www.linkedin.com/in/zeeshan-akram-572bbb34a/' target='_blank'>LinkedIn</a>
 </div>
 """, unsafe_allow_html=True)
+
 
 
 
