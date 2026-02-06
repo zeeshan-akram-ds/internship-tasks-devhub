@@ -7,3 +7,4 @@ joblib
 streamlit
 pathlib
 xgboost
+altair
